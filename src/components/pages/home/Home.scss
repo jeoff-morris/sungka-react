@@ -1,0 +1,20 @@
+.signup-or-signin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.lets-play.btn,
+.lets-play.btn {
+  padding: 0.25em;
+  border: none;
+  color: hsl(240, 100%, 50%);
+  background-color: hsl(120, 49%, 52%);
+  text-decoration: none;
+}
+
+.lets-play.btn:hover,
+.lets-play.btn:hover {
+  color: hsl(240, 100%, 30%);
+  background-color: hsl(120, 69%, 72%);
+}

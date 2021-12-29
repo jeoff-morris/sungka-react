@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Playball&display=swap");
+
+html,
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  min-width: 360px;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.125em;
+}
+
+a,
+button {
+  font-family: "Bebas Neue", cursive;
+  cursor: pointer;
+}
+
+.page.dark-mode {
+  color: white;
+}
+
+.page.light-mode {
+  color: black;
+}
+
+.container {
+  padding: 1em;
+  min-height: calc(100vh - 3em);
+}
+
+.dark-mode .container {
+  background-color: #1a1a1a;
+}
+
+.light-mode .container {
+  background-color: #fff;
+}
+
+.light-mode .page-heading {
+  text-align: center;
+  color: black;
+  margin-bottom: 1em;
+}
+
+.dark-mode .page-heading {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1em;
+}

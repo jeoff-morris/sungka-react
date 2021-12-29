@@ -1,0 +1,20 @@
+.signup-or-signin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.btn.google-login,
+.btn.facebook-login {
+  padding: 0.25em;
+  border: none;
+  font-size: 1.6em;
+  color: hsl(240, 100%, 50%);
+  background-color: hsl(120, 49%, 52%);
+}
+
+.btn.google-login:hover,
+.btn.facebook-login:hover {
+  color: hsl(240, 100%, 30%);
+  background-color: hsl(120, 69%, 72%);
+}

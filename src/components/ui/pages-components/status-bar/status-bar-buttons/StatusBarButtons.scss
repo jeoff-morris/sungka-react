@@ -1,0 +1,54 @@
+.btn.menu,
+.btn.signout,
+.btn.signin {
+  height: 100%;
+  font-size: 1em;
+  line-height: 3em;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0 1em;
+}
+
+.btn.menu {
+  text-decoration: underline;
+}
+
+.dark-mode .status-bar .btn.menu,
+.dark-mode .status-bar .btn.menu:visited {
+  color: #000;
+  background-color: #fff;
+  border: 0.125em solid #fff;
+}
+
+.dark-mode .status-bar .btn.menu:hover,
+.dark-mode .status-bar .btn.menu:active {
+  color: #000;
+  background-color: #fff;
+  border: 0.125em solid #fff;
+}
+
+.light-mode .status-bar .btn.menu,
+.light-mode .status-bar .btn.menu:visited {
+  color: #000;
+  background-color: #fff;
+  border: 0.125em solid #000;
+}
+
+.light-mode .status-bar .btn.menu:hover,
+.light-mode .status-bar .btn.menu:active {
+  color: #000;
+  background-color: #fff;
+  border: 0.125em solid #000;
+}
+
+.status-bar .btn.signin {
+  color: hsl(240, 100%, 50%);
+  background-color: hsl(120, 49%, 52%);
+  border: 0.125em solid hsl(120, 49%, 52%);
+}
+
+.status-bar .btn.signin:hover {
+  color: hsl(240, 100%, 30%);
+  background-color: hsl(120, 69%, 72%);
+  border: 0.125em solid hsl(120, 69%, 72%);
+}
