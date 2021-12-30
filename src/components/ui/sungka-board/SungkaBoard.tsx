@@ -73,11 +73,9 @@ export const SungkaBoard = (props: any) => {
         holeId={hole.holeId}
         holeClassName={hole.holeClassName}
         counterCount={hole.counterCount}
-        containmentAreaRadius={
-          hole.containmentAreaRadius * multiplier * counterMultiplier
-        }
-        counterWidth={hole.counterWidth * multiplier * counterMultiplier}
-        counterHeight={hole.counterHeight * multiplier * counterMultiplier}
+        containmentAreaRadius={12.5 * multiplier * counterMultiplier}
+        counterWidth={25 * multiplier * counterMultiplier}
+        counterHeight={25 * multiplier * counterMultiplier}
         counterImgSrc={hole.counterImgSrc}
         multiplier={multiplier}
         key={index.toString()}
