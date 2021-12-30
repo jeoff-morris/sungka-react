@@ -3,7 +3,6 @@ runtime: nodejs16
 instance_class: F2
 
 env_variables:
-  # Firebase
   NEXT_PUBLIC_FIREBASE_API_KEY: "AIzaSyCLUMZ8iM6LjEI-9aXsIk7Na2SbU97ar8A"
   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: "sungka-js.firebaseapp.com"
   NEXT_PUBLIC_FIREBASE_PROJECT_ID: "sungka-js"
@@ -12,7 +11,9 @@ env_variables:
   NEXT_PUBLIC_FIREBASE_APP_ID: "1:229271332498:web:bd1caa7eb66190b932e84b"
 
 handlers:
+  - url: /(.*\..+)$
+    static_files: build/\1
+    upload: build/(.*\..+)$
   - url: /.*
-    secure: always
-    redirect_http_response_code: 301
-    script: auto
+    static_files: build/index.html
+    upload: build/index.html

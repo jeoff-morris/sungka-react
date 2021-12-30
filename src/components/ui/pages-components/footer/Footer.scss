@@ -4,19 +4,29 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.light-mode .footer {
   background-color: #f0f8ff;
 }
 
-.footerContainer a {
+.dark-mode .footer {
+  background-color: #1d2022;
+}
+
+.footer a {
   font-size: 0.8em;
   text-decoration: none;
+}
+
+.light-mode .footer a {
   color: rgb(75, 44, 66);
 }
 
-.footerContainer a:hover {
+.light-mode .footer a:hover {
   color: rgb(0, 0, 0);
 }
 
-.footerContainer a:visited {
+.light-mode .footer a:visited {
   color: rgb(49, 29, 44);
 }
