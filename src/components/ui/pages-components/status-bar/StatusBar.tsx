@@ -36,20 +36,23 @@ export const StatusBar = (props: any) => {
           id="main-menu-btn"
         />
         {props.displayName ? (
-          <>
+          <div className="status-bar-right-btns">
+            <StatusBarInfo
+              className="btn display-name"
+              username={props.displayName}
+            />
             <StatusBarSignoutButton
-              linkTitle="Signin"
+              linkTitle="Signout"
               linkTo="#"
-              linkText="Signin"
-              className="btn signin"
+              linkText="Signout"
+              className="btn signout"
               onClick={props.signout}
             />
-            <StatusBarInfo username={props.displayName} />
-          </>
+          </div>
         ) : (
           <>
             <StatusBarSigninButton
-              linkTitle="Signout"
+              linkTitle="Signin"
               linkTo="/signin"
               linkText="Signin"
               className="btn signin"

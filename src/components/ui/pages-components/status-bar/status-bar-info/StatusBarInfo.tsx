@@ -3,5 +3,5 @@ import React from "react";
 import "./StatusBarInfo.scss";
 
 export const StatusBarInfo = (props: any) => {
-  return <div className="user-info">{props.username}</div>;
+  return <div className={props.className}>{props.username}</div>;
 };

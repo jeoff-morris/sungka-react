@@ -6,8 +6,8 @@ import { Footer } from "../ui/pages-components/footer/Footer";
 export const DefaultTemplate = (props: any) => {
   return (
     <div className={"page " + props.className}>
-      <StatusBar />
-      <MainMenu />
+      <StatusBar displayName={props.user.displayName} />
+      <MainMenu displayName={props.user.displayName} />
       <SungkaBanner />
       <div className="container">{props.page}</div>
       <Footer />

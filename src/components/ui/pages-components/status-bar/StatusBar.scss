@@ -5,6 +5,11 @@
   min-width: 360px;
 }
 
+.status-bar-right-btns {
+  display: flex;
+  flex-direction: row;
+}
+
 .dark-mode .status-bar {
   background-color: #000;
 }

@@ -87,10 +87,11 @@ export const MainMenu = (props: any) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <button>Signout</button>
+            <button className="signout btn">Signout</button>
           </li>
           <li>
             <button
+              className="dark-mode-button btn"
               onClick={() => {
                 darkMode();
               }}
