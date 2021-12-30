@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { app } from "../../../../firebase/firebase-config";
 import { getAuth, signOut } from "firebase/auth";
 
+import { MainMenu } from "../main-menu/MainMenu";
 import { StatusBarSigninButton } from "./status-bar-buttons/StatusBarSigninButton";
 import { StatusBarSignoutButton } from "./status-bar-buttons/StatusBarSignoutButton";
 import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
@@ -9,41 +9,6 @@ import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
 import "./StatusBar.scss";
 
 export const StatusBar = (props: any) => {
-  const [menuButton, setMenuButton] = useState(false);
-
-  const mainMenuButton = document.getElementById("main-menu-btn");
-  const mainMenu = document.getElementById("main-menu");
-
-  let menuButtonDown = () => {
-    setMenuButton(!menuButton);
-
-    if (menuButton === true && mainMenuButton != null && mainMenu != null) {
-      mainMenu.style.display = "block";
-      mainMenu.style.position = "fixed";
-      mainMenu.style.zIndex = "1000";
-    } else if (
-      menuButton === false &&
-      mainMenuButton != null &&
-      mainMenu != null
-    ) {
-      setTimeout(() => {
-        mainMenu.style.display = "none";
-        mainMenu.style.position = "fixed";
-        mainMenu.style.zIndex = "1000";
-      }, 3000);
-    }
-  };
-
-  let menuButtonLeave = () => {
-    if (mainMenuButton != null && mainMenu != null) {
-      setTimeout(() => {
-        mainMenu.style.display = "none";
-        mainMenu.style.position = "fixed";
-        mainMenu.style.zIndex = "1000";
-      }, 3000);
-    }
-  };
-
   const auth = getAuth(app);
 
   let signout = () => {
@@ -57,15 +22,12 @@ export const StatusBar = (props: any) => {
   return (
     <>
       <div className="status-bar">
-        <button
-          onMouseDown={menuButtonDown}
-          onMouseLeave={menuButtonLeave}
-          title="Menu"
-          className="btn menu"
-          id="main-menu-btn"
-        >
-          MENU
-        </button>
+        <div id="main-menu">
+          <button title="Menu" className="btn menu" id="main-menu-btn">
+            MENU
+          </button>
+          <MainMenu displayName={props.displayName} />
+        </div>
         {props.displayName ? (
           <div className="status-bar-right-btns">
             <StatusBarInfo
