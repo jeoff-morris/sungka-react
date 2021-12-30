@@ -1,50 +1,39 @@
-import React from "react";
-
-import { Counter } from "./counter/Counter";
+import { Counter } from "./counters/Counter";
 
 export interface ICounters {
-  holeId: string;
-  holeClassName: string;
   counterCount: number;
-  imageSrc: string;
+  counterImgSrc: string;
   counterWidth: number;
   counterHeight: number;
-  className: string;
-  counterId: string;
   containmentAreaRadius: number;
+  holeDivCoordinates: any;
 }
 
 export const Counters = (props: any) => {
   let {
-    holeId,
-    holeClassName,
     counterCount,
-    imageSrc,
+    counterImgSrc,
     counterWidth,
     counterHeight,
-    className,
-    counterId,
     containmentAreaRadius,
+    holeDivCoordinates,
   }: ICounters = props;
 
   let countersArray: JSX.Element[] = [];
-
   for (let i = 0; i < counterCount; i++) {
-    countersArray.push(
-      <Counter
-        className={className}
-        id={counterId}
-        src={imageSrc}
-        width={counterWidth}
-        height={counterHeight}
-        radius={containmentAreaRadius}
-      />
-    );
+    countersArray.push();
   }
 
   return (
-    <div id={holeId} className={holeClassName}>
-      {countersArray}
+    <div>
+      <Counter
+        counterImgSrc={counterImgSrc}
+        counterWidth={counterWidth}
+        counterHeight={counterHeight}
+        containmentAreaRadius={containmentAreaRadius}
+        containerXAxis={holeDivCoordinates.x}
+        containerYAxis={holeDivCoordinates.y}
+      />
     </div>
   );
 };
