@@ -14,7 +14,7 @@ export const StatusBar = (props: any) => {
   const mainMenuButton = document.getElementById("main-menu-btn");
   const mainMenu = document.getElementById("main-menu");
 
-  let menuButtonOver = () => {
+  let menuButtonDown = () => {
     setMenuButton(!menuButton);
 
     if (menuButton === true && mainMenuButton != null && mainMenu != null) {
@@ -58,7 +58,7 @@ export const StatusBar = (props: any) => {
     <>
       <div className="status-bar">
         <button
-          onMouseOver={menuButtonOver}
+          onMouseDown={menuButtonDown}
           onMouseLeave={menuButtonLeave}
           title="Menu"
           className="btn menu"
