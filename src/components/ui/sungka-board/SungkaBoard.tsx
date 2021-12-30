@@ -20,7 +20,7 @@ export const SungkaBoard = (props: any) => {
   switch (boardSize) {
     case "xs":
       boardWidth = 360;
-      multiplier = 1;
+      multiplier = 1.04;
       counterMultiplier = 0.2;
       break;
     case "sm":
