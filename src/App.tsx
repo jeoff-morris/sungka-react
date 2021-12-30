@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import {
-  getAuth,
-  FacebookAuthProvider,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { doc, getFirestore, setDoc } from "firebase/firestore";
+import { Routes, Route } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "./firebase/firebase-config";
 
 import { DefaultTemplate } from "./components/templates/DefaultTemplate";
@@ -46,11 +39,7 @@ export const App = () => {
     }
   }, [darkmode]);
 
-  let navigate = useNavigate();
   const auth = getAuth(app);
-  const db = getFirestore();
-  const facebookProvider = new FacebookAuthProvider();
-  const googleProvider = new GoogleAuthProvider();
 
   const [userData, setUserData] = useState({});
 
@@ -59,44 +48,6 @@ export const App = () => {
       setUserData(user);
     }
   });
-
-  const loginFacebook = () => {
-    signInWithPopup(auth, facebookProvider)
-      .then((result) => {
-        if (result.user) {
-          const user = result.user;
-          setDoc(doc(db, "users", user.uid), {
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoURL: user.photoURL,
-          });
-        }
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const loginGoogle = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        if (result.user) {
-          const user = result.user;
-          setDoc(doc(db, "users", user.uid), {
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoURL: user.photoURL,
-          });
-        }
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   return (
     <>
@@ -207,12 +158,7 @@ export const App = () => {
             <DefaultTemplate
               user={userData}
               className={darkMode ? "dark-mode" : "light-mode"}
-              page={
-                <Signin
-                  loginFacebook={loginFacebook}
-                  loginGoogle={loginGoogle}
-                />
-              }
+              page={<Signin />}
             />
           }
         />
