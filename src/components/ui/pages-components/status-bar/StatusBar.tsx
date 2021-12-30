@@ -33,13 +33,11 @@ export const StatusBar = (props: any) => {
   const auth = getAuth(app);
 
   let signout = () => {
-    signOut(auth)
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    signOut(auth).catch((error) => {
+      console.log(error);
+    });
+
+    window.location.reload();
   };
 
   return (

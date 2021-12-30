@@ -91,7 +91,7 @@ export const MainMenu = (props: any) => {
           </li>
           <li>
             <button
-              className="dark-mode-button btn"
+              className="dark-mode"
               onClick={() => {
                 darkMode();
               }}

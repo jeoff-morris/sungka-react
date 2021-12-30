@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "./firebase/firebase-config";
 
+import { getCookie } from "./utils/cookies";
+
 import { DefaultTemplate } from "./components/templates/DefaultTemplate";
 import { About } from "./components/pages/about/About";
 import { Contact } from "./components/pages/contact/Contact";
@@ -20,7 +22,7 @@ import { SungkaHistory } from "./components/pages/sungka-history/SungkaHistory";
 import { TermsAndConditions } from "./components/pages/terms-and-conditions/TermsAndConditions";
 
 export const App = () => {
-  let darkmode = localStorage.getItem("darkMode");
+  let darkmode = getCookie("dark-mode");
   const [darkMode, setDarkMode] = useState(true);
   useEffect(() => {
     if (darkmode === null) {
