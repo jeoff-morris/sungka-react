@@ -1,3 +1,7 @@
+import { useNavigate } from "react-router-dom";
+import { app } from "../../../../firebase/firebase-config";
+import { getAuth, signOut } from "firebase/auth";
+
 import { StatusBarMenuButton } from "./status-bar-buttons/StatusBarMenuButton";
 import { StatusBarSigninButton } from "./status-bar-buttons/StatusBarSigninButton";
 import { StatusBarSignoutButton } from "./status-bar-buttons/StatusBarSignoutButton";
@@ -6,6 +10,7 @@ import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
 import "./StatusBar.scss";
 
 export const StatusBar = (props: any) => {
+  let navigate = useNavigate();
   const mainMenuButton = document.getElementById("main-menu-btn");
   const mainMenu = document.getElementById("main-menu");
   if (mainMenuButton != null && mainMenu != null) {
@@ -24,6 +29,16 @@ export const StatusBar = (props: any) => {
       }, 2800);
     });
   }
+
+  const auth = getAuth(app);
+
+  let signout = () => {
+    signOut(auth).catch((error) => {
+      console.log(error);
+    });
+
+    navigate("/");
+  };
 
   return (
     <>
@@ -46,7 +61,7 @@ export const StatusBar = (props: any) => {
               linkTo="#"
               linkText="Signout"
               className="btn signout"
-              onClick={props.signout}
+              onClick={signout}
             />
           </div>
         ) : (

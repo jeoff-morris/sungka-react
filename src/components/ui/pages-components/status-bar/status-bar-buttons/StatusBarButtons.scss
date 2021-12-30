@@ -41,15 +41,19 @@ div .btn.signin {
   border: 0.125em solid #000;
 }
 
-.status-bar div .btn.signin,
+.status-bar .btn.signin,
 .status-bar div .btn.signout {
   color: hsl(240, 100%, 50%);
   background-color: hsl(120, 49%, 52%);
 }
 
-.status-bar div .btn.signin:hover,
+.status-bar .btn.signin:hover,
 .status-bar div .btn.signout:hover {
   color: hsl(240, 100%, 30%);
   background-color: hsl(120, 69%, 72%);
   text-decoration: underline;
+}
+
+.status-bar .btn.signin {
+  border: 00.125em solid hsl(120, 49%, 52%);
 }
