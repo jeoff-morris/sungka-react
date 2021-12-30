@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCLUMZ8iM6LjEI-9aXsIk7Na2SbU97ar8A",
-  authDomain: "sungka-js.firebaseapp.com",
-  projectId: "sungka-js",
-  storageBucket: "sungka-js.appspot.com",
-  messagingSenderId: "229271332498",
-  appId: "1:229271332498:web:bd1caa7eb66190b932e84b",
-  measurementId: "G-P63S0H2YMT",
+  apiKey: "AIzaSyDJiLVXo3dAsJrUm9rtiapPbVwlcU1d75Y",
+  authDomain: "sungka-react.firebaseapp.com",
+  projectId: "sungka-react",
+  storageBucket: "sungka-react.appspot.com",
+  messagingSenderId: "118064236573",
+  appId: "1:118064236573:web:2a8089046320ba86e0def4",
+  measurementId: "G-L77DE69RT3",
 };
 
 export const app = initializeApp(firebaseConfig);
