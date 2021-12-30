@@ -57,9 +57,6 @@ export const MainMenu = (props: any) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <button className="signout-btn">Signout</button>
-          </li>
-          <li>
             <button
               className="dark-mode"
               onClick={() => {
