@@ -10,22 +10,25 @@ import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
 import "./StatusBar.scss";
 
 export const StatusBar = (props: any) => {
-  let navigate = useNavigate();
   const mainMenuButton = document.getElementById("main-menu-btn");
   const mainMenu = document.getElementById("main-menu");
-  if (mainMenuButton != null && mainMenu != null) {
+  if (mainMenuButton != null) {
     mainMenuButton.addEventListener("click", (e) => {
       e.preventDefault();
-      mainMenu.style.display = "block";
-      mainMenu.style.position = "fixed";
-      mainMenu.style.zIndex = "1000";
+      if (mainMenu) {
+        mainMenu.style.display = "block";
+        mainMenu.style.position = "fixed";
+        mainMenu.style.zIndex = "1000";
+      }
     });
     mainMenuButton.addEventListener("mouseout", (e) => {
       e.preventDefault();
       setTimeout(() => {
-        mainMenu.style.display = "none";
-        mainMenu.style.position = "fixed";
-        mainMenu.style.zIndex = "1000";
+        if (mainMenu) {
+          mainMenu.style.display = "none";
+          mainMenu.style.position = "fixed";
+          mainMenu.style.zIndex = "1000";
+        }
       }, 2800);
     });
   }
