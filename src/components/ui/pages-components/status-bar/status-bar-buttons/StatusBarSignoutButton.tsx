@@ -11,6 +11,7 @@ export const StatusBarSignoutButton = (props: any) => {
         linkTo={props.linkTo}
         linkText={props.linkText}
         className={props.className}
+        onClick={props.signout()}
       />
     </>
   );
