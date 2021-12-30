@@ -9,7 +9,7 @@ export const Button = (props: any) => {
         to={props.linkTo}
         className={props.className}
         id={props.id}
-        onClick={props.onClick}
+        onClick={() => props.onClick()}
       >
         {props.linkText}
       </Link>

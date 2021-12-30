@@ -33,11 +33,13 @@ export const StatusBar = (props: any) => {
   const auth = getAuth(app);
 
   let signout = () => {
-    signOut(auth).catch((error) => {
-      console.log(error);
-    });
-
-    navigate("/");
+    signOut(auth)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -61,7 +63,7 @@ export const StatusBar = (props: any) => {
               linkTo="#"
               linkText="Signout"
               className="btn signout"
-              onClick={signout}
+              signout={signout}
             />
           </div>
         ) : (
