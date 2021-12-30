@@ -1,8 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { app } from "../../../../firebase/firebase-config";
 import { getAuth, signOut } from "firebase/auth";
 
-import { StatusBarMenuButton } from "./status-bar-buttons/StatusBarMenuButton";
 import { StatusBarSigninButton } from "./status-bar-buttons/StatusBarSigninButton";
 import { StatusBarSignoutButton } from "./status-bar-buttons/StatusBarSignoutButton";
 import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
@@ -10,28 +9,40 @@ import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
 import "./StatusBar.scss";
 
 export const StatusBar = (props: any) => {
+  const [menuButton, setMenuButton] = useState(false);
+
   const mainMenuButton = document.getElementById("main-menu-btn");
   const mainMenu = document.getElementById("main-menu");
-  if (mainMenuButton != null) {
-    mainMenuButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (mainMenu) {
-        mainMenu.style.display = "block";
+
+  let menuButtonOver = () => {
+    setMenuButton(!menuButton);
+
+    if (menuButton === true && mainMenuButton != null && mainMenu != null) {
+      mainMenu.style.display = "block";
+      mainMenu.style.position = "fixed";
+      mainMenu.style.zIndex = "1000";
+    } else if (
+      menuButton === false &&
+      mainMenuButton != null &&
+      mainMenu != null
+    ) {
+      setTimeout(() => {
+        mainMenu.style.display = "none";
         mainMenu.style.position = "fixed";
         mainMenu.style.zIndex = "1000";
-      }
-    });
-    mainMenuButton.addEventListener("mouseout", (e) => {
-      e.preventDefault();
+      }, 3000);
+    }
+  };
+
+  let menuButtonLeave = () => {
+    if (mainMenuButton != null && mainMenu != null) {
       setTimeout(() => {
-        if (mainMenu) {
-          mainMenu.style.display = "none";
-          mainMenu.style.position = "fixed";
-          mainMenu.style.zIndex = "1000";
-        }
-      }, 2800);
-    });
-  }
+        mainMenu.style.display = "none";
+        mainMenu.style.position = "fixed";
+        mainMenu.style.zIndex = "1000";
+      }, 3000);
+    }
+  };
 
   const auth = getAuth(app);
 
@@ -46,13 +57,15 @@ export const StatusBar = (props: any) => {
   return (
     <>
       <div className="status-bar">
-        <StatusBarMenuButton
-          linkTitle="Menu"
-          linkTo="#"
-          linkText="MENU"
+        <button
+          onMouseOver={menuButtonOver}
+          onMouseLeave={menuButtonLeave}
+          title="Menu"
           className="btn menu"
           id="main-menu-btn"
-        />
+        >
+          MENU
+        </button>
         {props.displayName ? (
           <div className="status-bar-right-btns">
             <StatusBarInfo

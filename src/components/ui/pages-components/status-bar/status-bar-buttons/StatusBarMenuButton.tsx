@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Button } from "../../../buttons/Button";
-
 import "./StatusBarButtons.scss";
 
 export const StatusBarMenuButton = (props: any) => {
