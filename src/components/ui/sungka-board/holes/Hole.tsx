@@ -3,14 +3,12 @@ import { useEffect, useState } from "react";
 import { Counters } from "./counters.tsx/Counters";
 
 export interface IHole {
-  holeClassName: string;
-  holeId: string;
   containmentAreaRadius: number;
   counterCount: number;
   counterWidth: number;
   counterHeight: number;
   counterImgSrc: string;
-  counterAlt: string;
+  multiplier: number;
 }
 
 export const Hole = (props: any) => {
@@ -20,6 +18,7 @@ export const Hole = (props: any) => {
     counterWidth,
     counterHeight,
     counterImgSrc,
+    multiplier,
   }: IHole = props;
 
   let countersArray: Array<JSX.Element> = [];
@@ -31,18 +30,21 @@ export const Hole = (props: any) => {
   useEffect(() => {
     if (holeDiv != null) {
       let rect = holeDiv?.getBoundingClientRect();
-      setHoleDivCoordinates({ x: rect?.left, y: rect?.top });
+      setHoleDivCoordinates({
+        x: rect?.left * multiplier + counterWidth * multiplier,
+        y: rect?.top * multiplier + counterHeight * multiplier,
+      });
     }
     return () => {};
-  }, [holeDiv]);
+  }, [holeDiv, multiplier, counterHeight, counterWidth]);
 
   for (let i = 0; i < counterCount; i++) {
     countersArray.push(
       <div className="counters" key={i.toString()}>
         <Counters
-          containmentAreaRadius={containmentAreaRadius}
-          counterWidth={counterWidth}
-          counterHeight={counterHeight}
+          containmentAreaRadius={containmentAreaRadius * multiplier}
+          counterWidth={counterWidth * multiplier}
+          counterHeight={counterHeight * multiplier}
           counterImgSrc={counterImgSrc}
           counterCount={counterCount}
           holeDivCoordinates={holeDivCoordinates}

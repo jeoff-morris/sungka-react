@@ -33,8 +33,8 @@ export const Counter = (props: any) => {
   transform = "rotate(" + Math.round(Math.random() * 360) + "deg)";
 
   const extraCSS = {
-    left: containerXAxis + counterWidth * 2 + left + "px",
-    top: containerYAxis + counterHeight * 2 + top + "px",
+    left: containerXAxis + left + "px",
+    top: containerYAxis + top + "px",
     width: counterWidth + "px",
     height: counterHeight + "px",
     transform: transform,

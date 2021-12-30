@@ -5,8 +5,7 @@ import Shell from "../../../assets/images/shells/white-shell.png";
 
 let data: ISungkaBoard = {
   boardBackgroundImage: "url(" + BoardImage + ")",
-  boardWidth: 1440,
-  boardHeight: 600,
+  boardSize: "xl",
   holesData: [
     {
       holeId: "ulo-p1",
