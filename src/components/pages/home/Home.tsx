@@ -10,10 +10,10 @@ export const Home = (props: any) => {
         <h2>Let's play Sungka</h2>
       </div>
       <div className="ready-to-play">
-        <h2>
+        <h3>
           Hi{props.displayName && <span> {props.displayName}</span>}, ready to
           play?
-        </h2>
+        </h3>
         <Link className="lets-play btn" to="/play">
           Let's play
         </Link>

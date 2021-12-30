@@ -102,7 +102,7 @@ export const App = () => {
     <>
       <Routes>
         <Route
-          path="/"
+          path="/about"
           element={
             <DefaultTemplate
               user={userData}
@@ -112,7 +112,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/contact"
           element={
             <DefaultTemplate
               user={userData}
@@ -122,7 +122,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/cookies-policy"
           element={
             <DefaultTemplate
               user={userData}
@@ -132,7 +132,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/data-delete-policy"
           element={
             <DefaultTemplate
               user={userData}
@@ -152,7 +152,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/membership"
           element={
             <DefaultTemplate
               user={userData}
@@ -162,7 +162,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/play"
           element={
             <DefaultTemplate
               user={userData}
@@ -172,7 +172,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/privacy-policy"
           element={
             <DefaultTemplate
               user={userData}
@@ -182,7 +182,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/profile"
           element={
             <DefaultTemplate
               user={userData}
@@ -192,7 +192,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/rules"
           element={
             <DefaultTemplate
               user={userData}
@@ -217,7 +217,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/sungka-history"
           element={
             <DefaultTemplate
               user={userData}
@@ -227,7 +227,7 @@ export const App = () => {
           }
         />
         <Route
-          path="/"
+          path="/terms-and-conditions"
           element={
             <DefaultTemplate
               user={userData}
