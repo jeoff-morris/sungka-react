@@ -18,38 +18,22 @@ export const Hole = (props: any) => {
     counterWidth,
     counterHeight,
     counterImgSrc,
-    multiplier,
   }: IHole = props;
 
   let countersArray: Array<JSX.Element> = [];
 
-  let holeDiv = document.getElementById(props.holeId);
-
-  const [holeDivCoordinates, setHoleDivCoordinates]: any = useState({});
-
-  useEffect(() => {
-    if (holeDiv != null) {
-      let rect = holeDiv?.getBoundingClientRect();
-      setHoleDivCoordinates({
-        x: rect?.left * multiplier + counterWidth * multiplier,
-        y: rect?.top * multiplier + counterHeight * multiplier,
-      });
-    }
-    return () => {};
-  }, [holeDiv, multiplier, counterHeight, counterWidth]);
-
   for (let i = 0; i < counterCount; i++) {
     countersArray.push(
-      <div className="counters" key={i.toString()}>
-        <Counters
-          containmentAreaRadius={containmentAreaRadius * multiplier}
-          counterWidth={counterWidth * multiplier}
-          counterHeight={counterHeight * multiplier}
-          counterImgSrc={counterImgSrc}
-          counterCount={counterCount}
-          holeDivCoordinates={holeDivCoordinates}
-        />
-      </div>
+      <Counters
+        containmentAreaRadius={containmentAreaRadius}
+        counterWidth={counterWidth}
+        counterHeight={counterHeight}
+        counterImgSrc={counterImgSrc}
+        counterCount={counterCount}
+        counterIndex={i}
+        holeId={props.holeId}
+        key={i.toString()}
+      />
     );
   }
 

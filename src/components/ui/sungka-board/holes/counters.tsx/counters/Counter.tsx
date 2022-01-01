@@ -1,3 +1,4 @@
+import { relative } from "node:path/win32";
 import { CSSProperties } from "react";
 
 interface ICounter {
@@ -5,9 +6,8 @@ interface ICounter {
   counterImgSrc: string;
   counterWidth: number;
   counterHeight: number;
-  zIndex: number;
-  containerXAxis: number;
-  containerYAxis: number;
+  counterIndex: number;
+  holeId: string;
 }
 
 export const Counter = (props: any) => {
@@ -16,9 +16,8 @@ export const Counter = (props: any) => {
     counterImgSrc,
     containmentAreaRadius,
     counterWidth,
-    zIndex,
-    containerXAxis,
-    containerYAxis,
+    counterIndex,
+    holeId,
   }: ICounter = props;
 
   let top: number;
@@ -31,10 +30,10 @@ export const Counter = (props: any) => {
   top = r * Math.sin(a);
 
   transform = "rotate(" + Math.round(Math.random() * 360) + "deg)";
-
+  console.log(counterHeight, counterWidth);
   const extraCSS = {
-    left: containerXAxis + left + "px",
-    top: containerYAxis + top + "px",
+    left: left + "px",
+    top: top + "px",
     width: counterWidth + "px",
     height: counterHeight + "px",
     transform: transform,
@@ -42,11 +41,11 @@ export const Counter = (props: any) => {
     backgroundImage: counterImgSrc,
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
-    zIndex: zIndex,
-    position: "absolute",
+    gridArea: holeId,
+    position: "relative",
   };
 
   const styles = extraCSS as CSSProperties;
 
-  return <div style={styles}></div>;
+  return <div title={`${counterIndex}`} style={styles}></div>;
 };

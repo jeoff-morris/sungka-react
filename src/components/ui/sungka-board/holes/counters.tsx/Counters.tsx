@@ -6,7 +6,8 @@ export interface ICounters {
   counterWidth: number;
   counterHeight: number;
   containmentAreaRadius: number;
-  holeDivCoordinates: any;
+  counterIndex: number;
+  holeId: string;
 }
 
 export const Counters = (props: any) => {
@@ -16,7 +17,8 @@ export const Counters = (props: any) => {
     counterWidth,
     counterHeight,
     containmentAreaRadius,
-    holeDivCoordinates,
+    counterIndex,
+    holeId,
   }: ICounters = props;
 
   let countersArray: JSX.Element[] = [];
@@ -25,15 +27,15 @@ export const Counters = (props: any) => {
   }
 
   return (
-    <div>
+    <>
       <Counter
         counterImgSrc={counterImgSrc}
         counterWidth={counterWidth}
         counterHeight={counterHeight}
         containmentAreaRadius={containmentAreaRadius}
-        containerXAxis={holeDivCoordinates.x}
-        containerYAxis={holeDivCoordinates.y}
+        counterIndex={counterIndex}
+        holeId={holeId}
       />
-    </div>
+    </>
   );
 };

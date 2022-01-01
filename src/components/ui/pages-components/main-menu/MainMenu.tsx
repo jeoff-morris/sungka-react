@@ -12,9 +12,9 @@ export const MainMenu = (props: any) => {
 
   useEffect(() => {
     if (darkmode === "true") {
-      setLightMode(true);
-    } else {
       setLightMode(false);
+    } else {
+      setLightMode(true);
     }
   }, [darkmode]);
 
