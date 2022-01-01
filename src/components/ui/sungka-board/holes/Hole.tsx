@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { Counters } from "./counters.tsx/Counters";
 
 export interface IHole {

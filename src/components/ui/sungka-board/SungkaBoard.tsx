@@ -6,55 +6,29 @@ import "./SungkaBoard.scss";
 
 export interface ISungkaBoard {
   holesData: Array<object>;
-  boardSize: "xs" | "sm" | "md" | "lg" | "xl";
+  boardWidth: number;
   boardBackgroundImage: string;
+  counterImgSrc: string;
 }
 
 export const SungkaBoard = (props: any) => {
-  let { boardSize, boardBackgroundImage, holesData }: ISungkaBoard = props;
+  let {
+    boardWidth,
+    boardBackgroundImage,
+    holesData,
+    counterImgSrc,
+  }: ISungkaBoard = props;
 
-  let boardWidth: number;
-  let multiplier = 1;
-  let counterMultiplier = 1;
-
-  switch (boardSize) {
-    case "xs":
-      boardWidth = 360;
-      multiplier = 1.04;
-      counterMultiplier = 0.2;
-      break;
-    case "sm":
-      boardWidth = 560;
-      multiplier = 1.03;
-      counterMultiplier = 0.35;
-      break;
-    case "md":
-      boardWidth = 720;
-      multiplier = 1.04;
-      counterMultiplier = 0.4;
-      break;
-    case "lg":
-      boardWidth = 1000;
-      multiplier = 1;
-      break;
-    case "xl":
-      boardWidth = 1440;
-      multiplier = 1.016;
-      counterMultiplier = 1.026;
-      break;
-    default:
-      boardWidth = 1000;
-  }
-
-  const boardHeightProportion = 1 / 2.4;
-  let boardHeight = boardWidth * boardHeightProportion;
+  let scaleFactor = boardWidth / 1440;
+  let boardHeight = boardWidth * (600 / 1440);
 
   let sungkaBoard = {
     width: boardWidth + "px",
     height: boardHeight + "px",
     backgroundImage: boardBackgroundImage,
     backgroundSize: "contain",
-    transform: `"scale(${multiplier})"`,
+    transform: `scale(${scaleFactor})`,
+    transformOrigin: "center",
   };
 
   let style = sungkaBoard as CSSProperties;
@@ -73,23 +47,18 @@ export const SungkaBoard = (props: any) => {
         holeId={hole.holeId}
         holeClassName={hole.holeClassName}
         counterCount={hole.counterCount}
-        containmentAreaRadius={12.5 * multiplier * counterMultiplier}
-        counterWidth={25 * multiplier * counterMultiplier}
-        counterHeight={25 * multiplier * counterMultiplier}
-        counterImgSrc={hole.counterImgSrc}
-        multiplier={multiplier}
+        containmentAreaRadius={12.5 * scaleFactor}
+        counterWidth={25 * scaleFactor}
+        counterHeight={25 * scaleFactor}
+        counterImgSrc={counterImgSrc}
         key={index.toString()}
       />
     );
   });
 
   return (
-    <div>
-      <div className="sungka-board-container">
-        <div className="sungka-board" style={style}>
-          {holesArray}
-        </div>
-      </div>
+    <div className="sungka-board" style={style}>
+      {holesArray}
     </div>
   );
 };

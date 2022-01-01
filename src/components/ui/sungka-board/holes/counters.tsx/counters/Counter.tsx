@@ -1,4 +1,3 @@
-import { relative } from "node:path/win32";
 import { CSSProperties } from "react";
 
 interface ICounter {
