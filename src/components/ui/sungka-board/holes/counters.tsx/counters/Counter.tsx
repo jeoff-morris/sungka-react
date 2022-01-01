@@ -29,7 +29,7 @@ export const Counter = (props: any) => {
   top = r * Math.sin(a);
 
   transform = "rotate(" + Math.round(Math.random() * 360) + "deg)";
-  console.log(counterHeight, counterWidth);
+
   const extraCSS = {
     left: left + "px",
     top: top + "px",
@@ -46,5 +46,5 @@ export const Counter = (props: any) => {
 
   const styles = extraCSS as CSSProperties;
 
-  return <div title={`${counterIndex}`} style={styles}></div>;
+  return <div id={holeId + "-" + counterIndex} style={styles}></div>;
 };

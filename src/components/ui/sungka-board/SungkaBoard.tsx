@@ -28,7 +28,7 @@ export const SungkaBoard = (props: any) => {
     backgroundImage: boardBackgroundImage,
     backgroundSize: "contain",
     transform: `scale(${scaleFactor})`,
-    transformOrigin: "center",
+    transformOrigin: "top left",
   };
 
   let style = sungkaBoard as CSSProperties;
