@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { app } from "./firebase/firebase-config";
+import { onAuthStateChanged } from "firebase/auth";
+import {
+  onDisconnect,
+  ref,
+  set,
+  serverTimestamp,
+  update,
+  onValue,
+} from "firebase/database";
+import { auth, db } from "./firebase/firebase-config";
 
 import { getCookie } from "./utils/cookies";
 
@@ -41,7 +49,20 @@ export const App = () => {
     }
   }, [darkmode]);
 
-  const auth = getAuth(app);
+  let uid = auth.currentUser?.uid;
+  const connectedRef = ref(db, ".info/connected");
+
+  useEffect(() => {
+    onValue(connectedRef, (snapshot) => {
+      if (snapshot.val() === true && uid) {
+        set(ref(db, `status/${uid}`), {
+          status: "online",
+          updated: serverTimestamp(),
+        });
+      }
+    });
+    return () => {};
+  });
 
   const [userData, setUserData] = useState({});
 

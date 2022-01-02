@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDU7svu9g-jM96lZS-OVhFDlrKZW_YSG5c",
@@ -9,8 +10,12 @@ const firebaseConfig = {
   messagingSenderId: "250834379578",
   appId: "1:250834379578:web:ec85fc04545d38265a2603",
   measurementId: "G-Z4ZL5ZQTCQ",
+  databaseURL:
+    "https://sungka-app-default-rtdb.asia-southeast1.firebasedatabase.app",
 };
 
-export const app = initializeApp(firebaseConfig);
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+
+export const db = getDatabase(app);
+
+export const auth = getAuth(app);

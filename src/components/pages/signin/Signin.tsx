@@ -6,15 +6,13 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { doc, getFirestore, setDoc } from "firebase/firestore";
 
-import { app } from "../../../firebase/firebase-config";
+import { ref, set, serverTimestamp, update } from "firebase/database";
+import { db, auth } from "../../../firebase/firebase-config";
 
 import "./Signin.scss";
 
 export const Signin = (props: any) => {
-  const auth = getAuth(app);
-  const db = getFirestore();
   let navigate = useNavigate();
 
   let facebookSignin = async () => {
@@ -23,7 +21,7 @@ export const Signin = (props: any) => {
       .then((result) => {
         if (result.user) {
           const user = result.user;
-          setDoc(doc(db, "users", user.uid), {
+          set(ref(db, `users/${user.uid}`), {
             uid: user.uid,
             email: user.email,
             displayName: user.displayName,
@@ -43,7 +41,7 @@ export const Signin = (props: any) => {
       .then((result) => {
         if (result) {
           const user = result.user;
-          setDoc(doc(db, "users", user.uid), {
+          set(ref(db, `users/${user.uid}`), {
             uid: user.uid,
             email: user.email,
             displayName: user.displayName,

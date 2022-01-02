@@ -1,4 +1,4 @@
-import { app } from "../../../../firebase/firebase-config";
+import { auth } from "../../../../firebase/firebase-config";
 import { getAuth, signOut } from "firebase/auth";
 
 import { MainMenu } from "../main-menu/MainMenu";
@@ -9,8 +9,6 @@ import { StatusBarInfo } from "./status-bar-info/StatusBarInfo";
 import "./StatusBar.scss";
 
 export const StatusBar = (props: any) => {
-  const auth = getAuth(app);
-
   let signout = () => {
     signOut(auth).catch((error) => {
       console.log(error);
