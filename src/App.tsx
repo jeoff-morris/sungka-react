@@ -2,14 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-import {
-  onDisconnect,
-  ref,
-  set,
-  serverTimestamp,
-  update,
-  onValue,
-} from "firebase/database";
+import { ref, set, serverTimestamp, onValue } from "firebase/database";
 import { auth, db } from "./firebase/firebase-config";
 
 import { getCookie } from "./utils/cookies";

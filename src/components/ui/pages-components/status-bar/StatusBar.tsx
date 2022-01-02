@@ -1,5 +1,5 @@
 import { auth } from "../../../../firebase/firebase-config";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 
 import { MainMenu } from "../main-menu/MainMenu";
 import { StatusBarSigninButton } from "./status-bar-buttons/StatusBarSigninButton";

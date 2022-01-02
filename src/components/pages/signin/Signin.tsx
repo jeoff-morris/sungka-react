@@ -1,13 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  getAuth,
   FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
 
-import { ref, set, serverTimestamp, update } from "firebase/database";
+import { ref, set } from "firebase/database";
 import { db, auth } from "../../../firebase/firebase-config";
 
 import "./Signin.scss";
