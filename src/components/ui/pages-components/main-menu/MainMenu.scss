@@ -15,13 +15,8 @@
   font-size: 1.2em;
 }
 
-.dark-mode .main-menu ul {
-  background-color: #000;
-}
-
-.light-mode .main-menu ul {
-  background-color: #fff;
-  border: 0.125em solid #000;
+.main-menu ul {
+  background-color: hsl(120, 49%, 52%);
 }
 
 .main-menu a {
@@ -35,8 +30,7 @@
 .dark-mode .main-menu a,
 .dark-mode .main-menu a:visited,
 .dark-mode .main-menu a:active {
-  color: #fff;
-  background-color: #000;
+  color: hsl(240, 100%, 50%);
 }
 
 .light-mode .main-menu a:hover {
@@ -46,8 +40,7 @@
 .light-mode .main-menu a,
 .light-mode .main-menu a:visited,
 .light-mode .main-menu a:active {
-  color: #000;
-  background-color: #fff;
+  color: hsl(240, 100%, 50%);
 }
 
 .dark-mode .main-menu button {
