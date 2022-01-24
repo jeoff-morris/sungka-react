@@ -21,9 +21,7 @@ export const StatusBar = (props: any) => {
     <>
       <div className="status-bar">
         <div id="main-menu">
-          <button title="Menu" className="btn menu" id="main-menu-btn">
-            MENU
-          </button>
+          <button id="main-menu-btn" title="Menu" className="btn menu"></button>
           <MainMenu displayName={props.displayName} />
         </div>
         {props.displayName ? (

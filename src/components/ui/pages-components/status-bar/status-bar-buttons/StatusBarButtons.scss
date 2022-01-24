@@ -6,39 +6,25 @@ div .btn.signin {
   line-height: 3em;
   text-decoration: none;
   font-weight: 400;
-  padding: 0 1em;
+  padding: 6px;
 }
 
 .btn.menu {
-  text-decoration: underline;
-}
-
-.dark-mode .status-bar .btn.menu,
-.dark-mode .status-bar .btn.menu:visited {
-  color: #000;
-  background-color: #fff;
-  border: 0.125em solid #fff;
-}
-
-.dark-mode .status-bar .btn.menu:hover,
-.dark-mode .status-bar .btn.menu:active {
-  color: #000;
-  background-color: #fff;
-  border: 0.125em solid #fff;
-}
-
-.light-mode .status-bar .btn.menu,
-.light-mode .status-bar .btn.menu:visited {
-  color: #000;
-  background-color: #fff;
-  border: 0.125em solid #000;
-}
-
-.light-mode .status-bar .btn.menu:hover,
-.light-mode .status-bar .btn.menu:active {
-  color: #000;
-  background-color: #fff;
-  border: 0.125em solid #000;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin: 6px;
+  border-radius: 100%;
+  background-image: url("./menuButton.svg");
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+  cursor: pointer;
+  box-shadow: -1px -1px 0 #1591d8, 1px 1px 0 #32a852;
+  border: none;
 }
 
 .status-bar .btn.signin,
