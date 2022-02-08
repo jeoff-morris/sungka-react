@@ -1,5 +1,11 @@
 import React from "react";
+import { ProtectedRoute } from "../../protected/ProtectedRoute";
 
 export const Profile = (props: any) => {
-  return <div></div>;
+  return (
+    <>
+      <ProtectedRoute />
+      <div></div>
+    </>
+  );
 };

@@ -9,16 +9,18 @@ export const Home = (props: any) => {
       <div className="page-heading">
         <h2>Let's play Sungka</h2>
       </div>
-      <div className="ready-to-play">
-        <h3>
-          Hi{props.displayName && <span> {props.displayName}</span>}, ready to
-          play?
-        </h3>
-        <Link className="lets-play btn" to="/play">
-          Let's play
-        </Link>
-        <br></br>
-      </div>
+      {props.displayName && (
+        <div className="ready-to-play">
+          <h3>
+            Hi{props.displayName && <span> {props.displayName}</span>}, ready to
+            play?
+          </h3>
+          <Link className="lets-play btn" to="/play">
+            Let's play
+          </Link>
+          <br></br>
+        </div>
+      )}
     </>
   );
 };

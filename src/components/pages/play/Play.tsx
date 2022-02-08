@@ -1,4 +1,5 @@
 import { SungkaBoard, ISungkaBoard } from "../../ui/sungka-board/SungkaBoard";
+import { ProtectedRoute } from "../../protected/ProtectedRoute";
 
 import BoardImage from "../../../assets/images/boards/old-wood-01.png";
 import Shell from "../../../assets/images/shells/white-shell.png";
@@ -94,5 +95,10 @@ let data: ISungkaBoard = {
 };
 
 export const Play = (props: any) => {
-  return <SungkaBoard {...data} />;
+  return (
+    <>
+      <ProtectedRoute />
+      <SungkaBoard {...data} />
+    </>
+  );
 };
