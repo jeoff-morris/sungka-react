@@ -3,15 +3,15 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDU7svu9g-jM96lZS-OVhFDlrKZW_YSG5c",
-  authDomain: "sungka-app.firebaseapp.com",
-  projectId: "sungka-app",
-  storageBucket: "sungka-app.appspot.com",
-  messagingSenderId: "250834379578",
-  appId: "1:250834379578:web:ec85fc04545d38265a2603",
-  measurementId: "G-Z4ZL5ZQTCQ",
+  apiKey: "AIzaSyCvd3Gub-QsVKTqK5L833BURNb3rAJB7hY",
+  authDomain: "sungka-live-online.firebaseapp.com",
   databaseURL:
-    "https://sungka-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "https://sungka-live-online-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "sungka-live-online",
+  storageBucket: "sungka-live-online.appspot.com",
+  messagingSenderId: "86854110563",
+  appId: "1:86854110563:web:49de87f6f2e44b5b79d756",
+  measurementId: "G-XQJ0H37CSQ",
 };
 
 const app = initializeApp(firebaseConfig);
