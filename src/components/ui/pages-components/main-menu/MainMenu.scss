@@ -11,26 +11,26 @@
 
 .main-menu li {
   display: inherit;
+  width: 11.25em;
   padding: 0.25em 2em;
   font-size: 1.2em;
-}
-
-.main-menu ul {
-  background-color: hsl(120, 49%, 52%);
+  background-image: linear-gradient(to right, #c14949 50%, #c1494970 100%);
 }
 
 .main-menu a {
   text-decoration: none;
 }
 
-.dark-mode .main-menu a:hover {
+.dark-mode .main-menu a:hover,
+.dark-mode span:hover {
   text-decoration: underline;
 }
 
 .dark-mode .main-menu a,
 .dark-mode .main-menu a:visited,
-.dark-mode .main-menu a:active {
-  color: hsl(240, 100%, 50%);
+.dark-mode .main-menu a:active,
+.dark-mode span {
+  color: #ffffff;
 }
 
 .light-mode .main-menu a:hover {
@@ -40,7 +40,7 @@
 .light-mode .main-menu a,
 .light-mode .main-menu a:visited,
 .light-mode .main-menu a:active {
-  color: hsl(240, 100%, 50%);
+  color: #ffffff;
 }
 
 .dark-mode .main-menu button {

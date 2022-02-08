@@ -1,3 +1,23 @@
+@keyframes menu-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes li-slide-in {
+  0% {
+    margin-left: -11.25em;
+    border-bottom-right-radius: 1.7em;
+  }
+  100% {
+    margin-left: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
 .status-bar {
   display: flex;
   justify-content: space-between;
@@ -19,7 +39,33 @@
 }
 
 #main-menu:hover div {
-  display: block;
+  display: grid;
+  place-content: center;
   position: absolute;
   z-index: 1000;
+  animation-name: menu-fade-in;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
+@for $i from 1 through 100 {
+  #main-menu:hover div li:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.1}s;
+  }
+}
+
+#main-menu:hover div li:first-child {
+  border-top-right-radius: 1.7em;
+}
+
+#main-menu:hover div li:last-child {
+  border-bottom-right-radius: 1.7em;
+}
+
+#main-menu:hover div li {
+  animation-name: li-slide-in;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }

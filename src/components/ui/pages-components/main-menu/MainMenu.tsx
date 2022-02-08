@@ -57,14 +57,13 @@ export const MainMenu = (props: any) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <button
-              className="dark-mode"
+            <span
               onClick={() => {
                 darkMode();
               }}
             >
               {lightMode ? "Dark Mode" : "Light Mode"}
-            </button>
+            </span>
           </li>
         </ul>
       ) : (
@@ -91,13 +90,14 @@ export const MainMenu = (props: any) => {
             <Link to="/signin">Login / Register</Link>
           </li>
           <li>
-            <button
+            <Link
+              to=""
               onClick={() => {
                 darkMode();
               }}
             >
               {lightMode ? "Dark Mode" : "Light Mode"}
-            </button>
+            </Link>
           </li>
         </ul>
       )}
