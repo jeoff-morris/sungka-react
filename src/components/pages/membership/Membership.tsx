@@ -1,5 +1,9 @@
 import React from "react";
 
 export const Membership = (props: any) => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>SITE UNDER DEVELOPMENT</h1>
+    </div>
+  );
 };

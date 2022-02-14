@@ -49,6 +49,7 @@
   animation-timing-function: ease-out;
 }
 
+/** animate items */
 @for $i from 1 through 100 {
   #main-menu:hover div li:nth-child(#{$i}n) {
     animation-delay: #{$i * 0.1}s;

@@ -1,5 +1,5 @@
+import { useLocation, Navigate } from "react-router-dom";
 import { SungkaBoard, ISungkaBoard } from "../../ui/sungka-board/SungkaBoard";
-import { ProtectedRoute } from "../../protected/ProtectedRoute";
 
 import BoardImage from "../../../assets/images/boards/old-wood-01.png";
 import Shell from "../../../assets/images/shells/white-shell.png";
@@ -95,10 +95,17 @@ let data: ISungkaBoard = {
 };
 
 export const Play = (props: any) => {
-  return (
-    <>
-      <ProtectedRoute />
-      <SungkaBoard {...data} />
-    </>
-  );
+  let location = useLocation();
+  let displayName = props.user.displayName;
+
+  if (displayName)
+    return (
+      <>
+        <h1>SITE UNDER DEVELOPMENT</h1>
+        <h2>Randomised bead position on Sungka board example</h2>
+        <SungkaBoard {...data} />
+      </>
+    );
+
+  return <Navigate to="/signin" state={{ from: location }} replace />;
 };

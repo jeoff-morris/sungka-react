@@ -8,6 +8,8 @@ export const Home = (props: any) => {
     <>
       <div className="page-heading">
         <h2>Let's play Sungka</h2>
+        <h1>SITE UNDER DEVELOPMENT</h1>
+        <h3>To test, please feel free to login!</h3>
       </div>
       {props.displayName && (
         <div className="ready-to-play">

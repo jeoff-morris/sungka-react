@@ -3,6 +3,7 @@ import React from "react";
 export const PrivacyPolicy = (props: any) => {
   return (
     <div className="privacy-policy">
+      <h1>SITE UNDER DEVELOPMENT</h1>
       <h1>Privacy Policy for Sungka Live</h1>
       <p>
         PRIVACY POLICY This privacy policy applies between you, the User of this

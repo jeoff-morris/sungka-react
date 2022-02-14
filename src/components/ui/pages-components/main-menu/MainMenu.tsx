@@ -57,13 +57,14 @@ export const MainMenu = (props: any) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <span
+            <Link
+              to=""
               onClick={() => {
                 darkMode();
               }}
             >
               {lightMode ? "Dark Mode" : "Light Mode"}
-            </span>
+            </Link>
           </li>
         </ul>
       ) : (

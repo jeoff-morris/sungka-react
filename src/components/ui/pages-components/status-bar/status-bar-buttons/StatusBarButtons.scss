@@ -6,7 +6,8 @@ div .btn.signin {
   line-height: 3em;
   text-decoration: none;
   font-weight: 400;
-  padding: 6px;
+  line-height: 62px;
+  padding: 0 6px;
 }
 
 .btn.menu {
@@ -23,7 +24,7 @@ div .btn.signin {
   background-size: 40px 40px;
   background-position: center;
   cursor: pointer;
-  box-shadow: -1px -1px 0 #1591d8, 1px 1px 0 #c14949;
+  box-shadow: -1px -1px 0 #1591d8, 1px 1px 0 #c1494981;
   border: none;
 }
 

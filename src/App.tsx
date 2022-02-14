@@ -59,11 +59,13 @@ export const App = () => {
 
   const [userData, setUserData] = useState({});
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUserData(user);
-    }
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserData(user);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -134,7 +136,7 @@ export const App = () => {
             <DefaultTemplate
               user={userData}
               className={darkMode ? "dark-mode" : "light-mode"}
-              page={<Play />}
+              page={<Play user={userData} />}
             />
           }
         />
